@@ -1,7 +1,19 @@
 class Solution {
     public boolean isPalindrome(int x) {
-      String orig=Integer.toString(x);
-      String rev=new StringBuilder(orig).reverse().toString();
-      return orig.equals(rev);  
+    int temp=x;
+    int sign;
+if(x<0) return false;
+    
+    int sum=0;
+
+    while(temp>0){
+        int digit=temp%10;
+        sum=sum*10+digit;
+        temp=temp/10;
+    }  
+    if(sum==x){
+        return true;
+    }
+    return false;
     }
 }

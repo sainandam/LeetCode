@@ -26,17 +26,13 @@ class Solution {
             LinkedList<Integer> currlevel = new LinkedList<>();
             for (int i = 0; i < levelSize; i++) {
                 TreeNode node = q.poll();
-
                 if (leftToRight) {
                     currlevel.addLast(node.val);
                 } else {
                     currlevel.addFirst(node.val);
                 }
-
-                if (node.left != null)
-                    q.add(node.left);
-                if (node.right != null)
-                    q.add(node.right);
+                if (node.left != null) q.add(node.left);
+                if (node.right != null) q.add(node.right);
             }
             res.add(currlevel);
             leftToRight = !leftToRight;
